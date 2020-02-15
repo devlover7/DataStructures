@@ -42,6 +42,8 @@ public class ArrayList {
 		{
 			System.out.print(ar[i]+" ");
 		}
+		
+		System.out.println();
 
 	}
 
@@ -56,4 +58,25 @@ public class ArrayList {
 			return -1;
 		}
 	}
+	
+	boolean remove(int index)
+	{
+		boolean flag = false;
+		if(index<ar.length)
+		{
+		flag = true;
+		for(int i=0;i<ar.length;i++)
+		{
+			if(index<=i&&i!=ar.length-1)
+			{
+				ar[i]= ar[i+1];
+			}
+		}
+		ar[ar.length-1]=0;
+		return flag;
+		}
+		else {
+		return flag;
+	}
+}
 }
