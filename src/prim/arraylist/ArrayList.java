@@ -2,11 +2,17 @@ package prim.arraylist;
 
 public class ArrayList {
 	static int ar[];
-	int increment=5;
+	static int increment=5;
 	static int nextposition=1;
 	ArrayList()
 	{
 		ar = new int[increment];
+	}
+	
+	ArrayList(int inc)
+	{
+		increment= inc;
+		ar = new int[inc];
 	}
 
 	boolean add(int number)
@@ -78,5 +84,33 @@ public class ArrayList {
 		else {
 		return flag;
 	}
-}
+		}
+	
+	boolean addAtIndex(int index,int input)
+	{
+		boolean flag = false;
+		if(index==ar.length-1)
+		{
+			add(input);
+		}
+		else
+		{
+			flag= true;
+			for(int i=ar.length-1;i>=index;i--)
+			{
+				if(i==index)
+				{
+					ar[i]=input;
+				}
+				else 
+				{
+					ar[i]= ar[i-1];
+				}
+				
+				
+			}
+		}
+		return flag;
+	}
+
 }
